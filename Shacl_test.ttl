@@ -1,0 +1,60 @@
+@prefix : <http://www.mysemantics.com/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix myOnto: <http://www.mysemantics.com/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+
+:PersonShape a sh:NodeShape  ;
+    sh:targetClass myOnto:Person ;
+    sh:property [
+        sh:path myOnto:prizeYear ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:gYear ;
+    ] ,
+    [
+        sh:path schema:familyName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] ,
+    [
+        sh:path myOnto:birthDate ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:date ;
+    ] ,
+	  [
+        sh:path myOnto:laureateID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+    ] .
+
+:GenderShape a sh:NodeShape  ;
+    sh:targetClass myOnto:Person ;
+    sh:property [
+        sh:path myOnto:gender ; 
+        sh:in (schema:Male schema:Female);
+    ] .
+
+:PrizeCategoryShape a sh:NodeShape  ;
+    sh:targetClass myOnto:Person ;
+    sh:property [
+        sh:path myOnto:prizeCategory ;
+        sh:in (:Nobel_Prize_in_Chemistry :Nobel_Memorial_Prize_in_Economic_Sciences :Nobel_Prize_in_Physiology_or_Medicine :Nobel_Prize_in_Literature :Nobel_Peace_Prize :Nobel_Prize_in_Physics);
+    ] .
+    
+:PrizeShareShape a sh:NodeShape ;
+    sh:targetClass myOnto:Person ;
+    sh:property [
+      sh:path myOnto:prizeShare  ;
+      sh:minInclusive 1 ;
+      sh:maxInclusive 3 ;
+      sh:datatype xsd:integer ;
+    ] .
+

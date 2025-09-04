@@ -1,0 +1,745 @@
+@prefix : <http://www.mysemantics.com/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix myOnto: <http://www.mysemantics.com/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+myOnto:NobelPrize a rdfs:Class ;
+    rdfs:label "Nobel Prize"@en ;
+    rdfs:comment "A class defining a Nobel Prize."@en ;
+    rdfs:subClassOf dbo:NobelPrize .
+
+myOnto: a owl:Ontology ;
+    rdfs:comment "An ontology for Semantic Web course final project" .
+
+myOnto:birthCountryCode a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "Birth Country Code"@en ;
+    rdfs:comment "The code of a person's birth country"@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:string .
+
+myOnto:gender a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Gender"@en ;
+    rdfs:comment "The gender of a person"@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range schema:GenderType ;
+    rdfs:subPropertyOf schema:gender .
+
+myOnto:motivation a owl:DatatypeProperty ;
+    rdfs:label "Motivation"@en ;
+    rdfs:comment "The official statement or explanation for awarding a Nobel Prize to a particular individual or group."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:string .
+
+myOnto:prizeCategory a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Nobel Prize Category"@en ;
+    rdfs:comment "The Nobel Prize category of a person."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range myOnto:NobelPrize .
+
+myOnto:prizeYear a owl:DatatypeProperty ;
+    rdfs:label "Prize Year"@en ;
+    rdfs:comment "The year a person won a Nobel Prize."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:gYear .
+
+:Abdulrazak_Gurnah a myOnto:Person ;
+    myOnto:birthCountry dbr:Tanzania ;
+    myOnto:birthCountryCode "TZ"^^xsd:string ;
+    myOnto:birthDate "1948-12-20"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1004 ;
+    myOnto:motivation "for his uncompromising and compassionate penetration of the effects of colonialism and the fate of the refugee in the gulf between cultures and continents"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Prize_in_Literature ;
+    myOnto:prizeShare 1 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Abdulrazak_Gurnah ;
+    schema:familyName "Gurnah"^^xsd:string ;
+    schema:givenName "Abdulrazak"^^xsd:string .
+
+:Alain_Aspect a myOnto:Person ;
+    myOnto:birthCountry dbr:France ;
+    myOnto:birthCountryCode "FR"^^xsd:string ;
+    myOnto:birthDate "1947-06-15"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1012 ;
+    myOnto:motivation "for experiments with entangled photons establishing the violation of Bell inequalities and  pioneering quantum information science"^^xsd:string ;
+    myOnto:organizationName dbr:Paris-Saclay_University ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Alain_Aspect ;
+    schema:birthPlace dbr:Agen ;
+    schema:familyName "Aspect"^^xsd:string ;
+    schema:givenName "Alain"^^xsd:string .
+
+:Ales_Bialiatski a myOnto:Person ;
+    myOnto:birthCountry dbr:Russia ;
+    myOnto:birthCountryCode "RU"^^xsd:string ;
+    myOnto:birthDate "1962-09-25"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1018 ;
+    myOnto:motivation "The Peace Prize laureates represent civil society in their home countries. They have for many years promoted the right to criticise power and protect the fundamental rights of citizens. They have made an outstanding effort to document war crimes human right abuses and the abuse of power. Together they demonstrate the significance of civil society for peace and democracy."^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Peace_Prize ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Ales_Bialiatski ;
+    schema:birthPlace dbr:Vyartsilya ;
+    schema:familyName "Bialiatski"^^xsd:string ;
+    schema:givenName "Ales"^^xsd:string .
+
+:Andrea_Ghez a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1965-06-16"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 990 ;
+    myOnto:motivation "for the discovery of a supermassive compact object at the centre of our galaxy"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_California ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Andrea_M._Ghez ;
+    schema:birthPlace dbr:New_York_City ;
+    schema:familyName "Ghez"^^xsd:string ;
+    schema:givenName "Andrea"^^xsd:string .
+
+:Annie_Ernaux a myOnto:Person ;
+    myOnto:birthCountry dbr:France ;
+    myOnto:birthCountryCode "FR"^^xsd:string ;
+    myOnto:birthDate "1940-09-01"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 1017 ;
+    myOnto:motivation "for the courage and clinical acuity with which she uncovers the roots estrangements and  collective restraints of personal memory"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Prize_in_Literature ;
+    myOnto:prizeShare 1 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Annie_Ernaux ;
+    schema:birthPlace dbr:Lillebonne ;
+    schema:familyName "Ernaux"^^xsd:string ;
+    schema:givenName "Annie"^^xsd:string .
+
+:Anton_Zeilinger a myOnto:Person ;
+    myOnto:birthCountry dbr:Austria ;
+    myOnto:birthCountryCode "AT"^^xsd:string ;
+    myOnto:birthDate "1945-05-20"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1014 ;
+    myOnto:motivation "for experiments with entangled photons establishing the violation of Bell inequalities and  pioneering quantum information science"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Vienna ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Anton_Zeilinger ;
+    schema:birthPlace dbr:Ried_im_Innkreis ;
+    schema:familyName "Zeilinger"^^xsd:string ;
+    schema:givenName "Anton"^^xsd:string .
+
+:Ardem_Patapoutian a myOnto:Person ;
+    myOnto:birthCountry dbr:Lebanon ;
+    myOnto:birthCountryCode "LB"^^xsd:string ;
+    myOnto:birthDate "1967-10-02"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 998 ;
+    myOnto:motivation "for their discoveries of receptors for temperature and touch"^^xsd:string ;
+    myOnto:organizationName dbr:Scripps_Research ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Ardem_Patapoutian ;
+    schema:birthPlace dbr:Beirut ;
+    schema:familyName "Patapoutian"^^xsd:string ;
+    schema:givenName "Ardem"^^xsd:string .
+
+:Barry_Sharpless a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1941-04-28"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 743 ;
+    myOnto:motivation "for the development of click chemistry and bioorthogonal chemistry"^^xsd:string ;
+    myOnto:organizationName dbr:Scripps_Research ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Karl_Barry_Sharpless ;
+    schema:birthPlace dbr:Philadelphia ;
+    schema:familyName "Sharpless"^^xsd:string ;
+    schema:givenName "Barry"^^xsd:string .
+
+:Ben_Bernanke a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1953-12-13"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1021 ;
+    myOnto:motivation "for research on banks and financial crises"^^xsd:string ;
+    myOnto:organizationName dbr:Brookings_Institution ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Ben_Bernanke ;
+    schema:birthPlace <http://dbpedia.org/resource/Augusta,_Georgia> ;
+    schema:familyName "Bernanke"^^xsd:string ;
+    schema:givenName "Ben"^^xsd:string .
+
+:Benjamin_List a myOnto:Person ;
+    myOnto:birthCountry dbr:Germany ;
+    myOnto:birthCountryCode "DE"^^xsd:string ;
+    myOnto:birthDate "1968-01-11"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1002 ;
+    myOnto:motivation "for the development of asymmetric organocatalysis"^^xsd:string ;
+    myOnto:organizationName dbr:Max_Planck_Institute_for_Coal_Research ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Benjamin_List ;
+    schema:birthPlace dbr:Frankfurt ;
+    schema:familyName "List"^^xsd:string ;
+    schema:givenName "Benjamin"^^xsd:string .
+
+:Carolyn_Bertozzi a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1966-10-10"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 1015 ;
+    myOnto:motivation "for the development of click chemistry and bioorthogonal chemistry"^^xsd:string ;
+    myOnto:organizationName dbr:Stanford_University ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Carolyn_Bertozzi ;
+    schema:birthPlace dbr:Boston ;
+    schema:familyName "Bertozzi"^^xsd:string ;
+    schema:givenName "Carolyn"^^xsd:string .
+
+:Charles_Rice a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1952-08-25"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 987 ;
+    myOnto:motivation "for the discovery of Hepatitis C virus"^^xsd:string ;
+    myOnto:organizationName dbr:Rockefeller_University ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Charles_M._Rice ;
+    schema:birthPlace <http://dbpedia.org/resource/Sacramento_County,_California> ;
+    schema:familyName "Rice"^^xsd:string ;
+    schema:givenName "Charles"^^xsd:string .
+
+:David_Card a myOnto:Person ;
+    myOnto:birthCountry dbr:Canada ;
+    myOnto:birthCountryCode "CA"^^xsd:string ;
+    myOnto:birthDate "1956-01-01"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1007 ;
+    myOnto:motivation "for his empirical contributions to labour economics"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_California ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:David_Card ;
+    schema:birthPlace dbr:Guelph ;
+    schema:familyName "Card"^^xsd:string ;
+    schema:givenName "David"^^xsd:string .
+
+:David_Julius a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1955-11-04"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 997 ;
+    myOnto:motivation "for their discoveries of receptors for temperature and touch"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_California ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:David_Julius ;
+    schema:birthPlace dbr:New_York_City ;
+    schema:familyName "Julius"^^xsd:string ;
+    schema:givenName "David"^^xsd:string .
+
+:David_MacMillan a myOnto:Person ;
+    myOnto:birthCountry dbr:United_Kingdom ;
+    myOnto:birthCountryCode "GB"^^xsd:string ;
+    myOnto:birthDate "1968-03-16"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1003 ;
+    myOnto:motivation "for the development of asymmetric organocatalysis"^^xsd:string ;
+    myOnto:organizationName dbr:Princeton_University ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:David_MacMillan ;
+    schema:birthPlace dbr:Bellshill ;
+    schema:familyName "MacMillan"^^xsd:string ;
+    schema:givenName "David"^^xsd:string .
+
+:Dmitry_Muratov a myOnto:Person ;
+    myOnto:birthCountry dbr:Soviet_Union ;
+    myOnto:birthCountryCode "RU"^^xsd:string ;
+    myOnto:birthDate "1961-10-29"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1006 ;
+    myOnto:motivation "for their efforts to safeguard freedom of expression which is a precondition for democracy and lasting peace"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Peace_Prize ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Dmitry_Muratov ;
+    schema:birthPlace <http://dbpedia.org/resource/Kuybyshev,_Novosibirsk_Oblast> ;
+    schema:familyName "Muratov"^^xsd:string ;
+    schema:givenName "Dmitry"^^xsd:string .
+
+:Douglas_Diamond a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1953-10-25"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1022 ;
+    myOnto:motivation "for research on banks and financial crises"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Chicago ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Douglas_Diamond ;
+    schema:birthPlace dbr:Chicago ;
+    schema:familyName "Diamond"^^xsd:string ;
+    schema:givenName "Douglas"^^xsd:string .
+
+:Emmanuelle_Charpentier a myOnto:Person ;
+    myOnto:birthCountry dbr:France ;
+    myOnto:birthCountryCode "FR"^^xsd:string ;
+    myOnto:birthDate "1968-12-11"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 991 ;
+    myOnto:motivation "for the development of a method for genome editing"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Emmanuelle_Charpentier ;
+    schema:birthPlace dbr:Juvisy-sur-Orge ;
+    schema:familyName "Charpentier"^^xsd:string ;
+    schema:givenName "Emmanuelle"^^xsd:string .
+
+:Giorgio_Parisi a myOnto:Person ;
+    myOnto:birthCountry dbr:Italy ;
+    myOnto:birthCountryCode "IT"^^xsd:string ;
+    myOnto:birthDate "1948-08-04"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1001 ;
+    myOnto:motivation "for the discovery of the interplay of disorder and fluctuations in physical systems from atomic to planetary scales"^^xsd:string ;
+    myOnto:organizationName dbr:Sapienza_University_of_Rome ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Giorgio_Parisi ;
+    schema:birthPlace dbr:Rome ;
+    schema:familyName "Parisi"^^xsd:string ;
+    schema:givenName "Giorgio"^^xsd:string .
+
+:Guido_Imbens a myOnto:Person ;
+    myOnto:birthCountry dbr:Netherlands ;
+    myOnto:birthCountryCode "NL"^^xsd:string ;
+    myOnto:birthDate "1963-09-03"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1009 ;
+    myOnto:motivation "for their methodological contributions to the analysis of causal relationships"^^xsd:string ;
+    myOnto:organizationName dbr:Stanford_University ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Guido_Imbens ;
+    schema:birthPlace dbr:Geldrop ;
+    schema:familyName "Imbens"^^xsd:string ;
+    schema:givenName "Guido"^^xsd:string .
+
+:Harvey_Alter a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1935-09-12"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 985 ;
+    myOnto:motivation "for the discovery of Hepatitis C virus"^^xsd:string ;
+    myOnto:organizationName dbr:National_Institutes_of_Health ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Harvey_J._Alter ;
+    schema:birthPlace dbr:New_York_City ;
+    schema:familyName "Alter"^^xsd:string ;
+    schema:givenName "Harvey"^^xsd:string .
+
+:Jennifer_A._Doudna a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1964-02-19"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 992 ;
+    myOnto:motivation "for the development of a method for genome editing"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_California ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Jennifer_Doudna ;
+    schema:birthPlace <http://dbpedia.org/resource/Washington,_D.C.> ;
+    schema:familyName "Doudna"^^xsd:string ;
+    schema:givenName "Jennifer A."^^xsd:string .
+
+:John_F._Clauser a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1942-12-01"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1013 ;
+    myOnto:motivation "for experiments with entangled photons establishing the violation of Bell inequalities and  pioneering quantum information science"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:John_Clauser ;
+    schema:birthPlace <http://dbpedia.org/resource/Pasadena,_California> ;
+    schema:familyName "Clauser"^^xsd:string ;
+    schema:givenName "John F."^^xsd:string .
+
+:Joshua_Angrist a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1960-09-18"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1008 ;
+    myOnto:motivation "for their methodological contributions to the analysis of causal relationships"^^xsd:string ;
+    myOnto:organizationName dbr:Massachusetts_Institute_of_Technology ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Joshua_Angrist ;
+    schema:birthPlace <http://dbpedia.org/resource/Columbus,_Ohio> ;
+    schema:familyName "Angrist"^^xsd:string ;
+    schema:givenName "Joshua"^^xsd:string .
+
+:Klaus_Hasselmann a myOnto:Person ;
+    myOnto:birthCountry dbr:Germany ;
+    myOnto:birthCountryCode "DE"^^xsd:string ;
+    myOnto:birthDate "1931-10-25"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1000 ;
+    myOnto:motivation "for the physical modelling of Earth’s climate quantifying variability and reliably predicting global warming"^^xsd:string ;
+    myOnto:organizationName dbr:Max_Planck_Institute_for_Meteorology ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Klaus_Hasselmann ;
+    schema:birthPlace dbr:Hamburg ;
+    schema:familyName "Hasselmann"^^xsd:string ;
+    schema:givenName "Klaus"^^xsd:string .
+
+:Louise_Glück a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1943-04-22"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 993 ;
+    myOnto:motivation "for her unmistakable poetic voice that with austere beauty makes individual existence universal"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Prize_in_Literature ;
+    myOnto:prizeShare 1 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Louise_Glück ;
+    schema:birthPlace dbr:New_York_City ;
+    schema:familyName "Glück"^^xsd:string ;
+    schema:givenName "Louise"^^xsd:string .
+
+:Maria_Ressa a myOnto:Person ;
+    myOnto:birthCountry dbr:Philippines ;
+    myOnto:birthCountryCode "PH"^^xsd:string ;
+    myOnto:birthDate "1963-10-02"^^xsd:date ;
+    myOnto:gender schema:Female ;
+    myOnto:laureateID 1005 ;
+    myOnto:motivation "for their efforts to safeguard freedom of expression which is a precondition for democracy and lasting peace"^^xsd:string ;
+    myOnto:prizeCategory :Nobel_Peace_Prize ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Maria_Ressa ;
+    schema:birthPlace dbr:Manila ;
+    schema:familyName "Ressa"^^xsd:string ;
+    schema:givenName "Maria"^^xsd:string .
+
+:Michael_Houghton a myOnto:Person ;
+    myOnto:birthCountry dbr:United_Kingdom ;
+    myOnto:birthCountryCode "GB"^^xsd:string ;
+    myOnto:birthDate "1949-01-01"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 986 ;
+    myOnto:motivation "for the discovery of Hepatitis C virus"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Alberta ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Michael_Houghton_\(virologist\) ;
+    schema:familyName "Houghton"^^xsd:string ;
+    schema:givenName "Michael"^^xsd:string .
+
+:Morten_Meldal a myOnto:Person ;
+    myOnto:birthCountry dbr:Denmark ;
+    myOnto:birthCountryCode "DK"^^xsd:string ;
+    myOnto:birthDate "1954-01-16"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1016 ;
+    myOnto:motivation "for the development of click chemistry and bioorthogonal chemistry"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Copenhagen ;
+    myOnto:prizeCategory :Nobel_Prize_in_Chemistry ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Morten_P._Meldal ;
+    schema:birthPlace dbr:Copenhagen ;
+    schema:familyName "Meldal"^^xsd:string ;
+    schema:givenName "Morten"^^xsd:string .
+
+:Paul_Milgrom a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1948-04-20"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 995 ;
+    myOnto:motivation "for improvements to auction theory and inventions of new auction formats"^^xsd:string ;
+    myOnto:organizationName dbr:Stanford_University ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Paul_Milgrom ;
+    schema:birthPlace dbr:Detroit ;
+    schema:familyName "Milgrom"^^xsd:string ;
+    schema:givenName "Paul"^^xsd:string .
+
+:Philip_Dybvig a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1955-05-22"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1023 ;
+    myOnto:motivation "for research on banks and financial crises"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Washington ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Philip_H._Dybvig ;
+    schema:birthPlace <http://dbpedia.org/resource/Gainesville,_Florida> ;
+    schema:familyName "Dybvig"^^xsd:string ;
+    schema:givenName "Philip"^^xsd:string .
+
+:Reinhard_Genzel a myOnto:Person ;
+    myOnto:birthCountry dbr:Germany ;
+    myOnto:birthCountryCode "DE"^^xsd:string ;
+    myOnto:birthDate "1952-03-24"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 989 ;
+    myOnto:motivation "for the discovery of a supermassive compact object at the centre of our galaxy"^^xsd:string ;
+    myOnto:organizationName dbr:Max_Planck_Institute_for_Physics ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Reinhard_Genzel ;
+    schema:birthPlace dbr:Bad_Homburg_vor_der_Höhe ;
+    schema:familyName "Genzel"^^xsd:string ;
+    schema:givenName "Reinhard"^^xsd:string .
+
+:Robert_Wilson a myOnto:Person ;
+    myOnto:birthCountry dbr:United_States ;
+    myOnto:birthCountryCode "US"^^xsd:string ;
+    myOnto:birthDate "1937-05-16"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 996 ;
+    myOnto:motivation "for improvements to auction theory and inventions of new auction formats"^^xsd:string ;
+    myOnto:organizationName dbr:Stanford_University ;
+    myOnto:prizeCategory :Nobel_Memorial_Prize_in_Economic_Sciences ;
+    myOnto:prizeShare 2 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Robert_B._Wilson ;
+    schema:birthPlace <http://dbpedia.org/resource/Geneva,_New_York> ;
+    schema:familyName "Wilson"^^xsd:string ;
+    schema:givenName "Robert"^^xsd:string .
+
+:Roger_Penrose a myOnto:Person ;
+    myOnto:birthCountry dbr:United_Kingdom ;
+    myOnto:birthCountryCode "GB"^^xsd:string ;
+    myOnto:birthDate "1931-08-08"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 988 ;
+    myOnto:motivation "for the discovery that black hole formation is a robust prediction of the general theory of relativity"^^xsd:string ;
+    myOnto:organizationName dbr:University_of_Oxford ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2020"^^xsd:gYear ;
+    owl:sameAs dbr:Roger_Penrose ;
+    schema:birthPlace dbr:Colchester ;
+    schema:familyName "Penrose"^^xsd:string ;
+    schema:givenName "Roger"^^xsd:string .
+
+:Svante_Pääbo a myOnto:Person ;
+    myOnto:birthCountry dbr:Sweden ;
+    myOnto:birthCountryCode "SE"^^xsd:string ;
+    myOnto:birthDate "1955-04-20"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 1011 ;
+    myOnto:motivation "for his discoveries concerning the genomes of extinct hominins and human evolution"^^xsd:string ;
+    myOnto:organizationName dbr:Max_Planck_Institute_for_Evolutionary_Anthropology ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physiology_or_Medicine ;
+    myOnto:prizeShare 1 ;
+    myOnto:prizeYear "2022"^^xsd:gYear ;
+    owl:sameAs dbr:Svante_Pääbo ;
+    schema:birthPlace dbr:Stockholm ;
+    schema:familyName "Pääbo"^^xsd:string ;
+    schema:givenName "Svante"^^xsd:string .
+
+:Syukuro_Manabe a myOnto:Person ;
+    myOnto:birthCountry dbr:Japan ;
+    myOnto:birthCountryCode "JP"^^xsd:string ;
+    myOnto:birthDate "1931-09-21"^^xsd:date ;
+    myOnto:gender schema:Male ;
+    myOnto:laureateID 999 ;
+    myOnto:motivation "for the physical modelling of Earth’s climate quantifying variability and reliably predicting global warming"^^xsd:string ;
+    myOnto:organizationName dbr:Princeton_University ;
+    myOnto:prizeCategory :Nobel_Prize_in_Physics ;
+    myOnto:prizeShare 3 ;
+    myOnto:prizeYear "2021"^^xsd:gYear ;
+    owl:sameAs dbr:Syukuro_Manabe ;
+    schema:birthPlace <http://dbpedia.org/resource/Shingū,_Ehime> ;
+    schema:familyName "Manabe"^^xsd:string ;
+    schema:givenName "Syukuro"^^xsd:string .
+
+schema:birthPlace a owl:ObjectProperty .
+
+schema:familyName a owl:DatatypeProperty .
+
+schema:givenName a owl:DatatypeProperty .
+
+dbo:NobelPrize a owl:Class .
+
+myOnto:birthCountry a owl:FunctionalProperty,
+        owl:ObjectProperty ;
+    rdfs:label "Birth Country"@en ;
+    rdfs:comment "The country where a person was born."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range dbo:Country .
+
+myOnto:birthDate a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:label "Date"@en ;
+    rdfs:comment "The date of birth of a person"@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:date ;
+    rdfs:subPropertyOf schema:birthDate .
+
+myOnto:hasPrizeName a owl:DatatypeProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "Prize Name"@en ;
+    rdfs:comment "The name of a Nobel prize category"@en ;
+    rdfs:domain myOnto:NobelPrize ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:name .
+
+myOnto:laureateID a owl:DatatypeProperty,
+        owl:InverseFunctionalProperty ;
+    rdfs:label "Laureate ID"@en ;
+    rdfs:comment "The unique identifier assigned to each Nobel laureate."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:integer .
+
+myOnto:organizationName a owl:ObjectProperty ;
+    rdfs:label "Organization Name"@en ;
+    rdfs:comment "The organization which a person belongs to."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range schema:Organization .
+
+myOnto:prizeShare a owl:DatatypeProperty ;
+    rdfs:label "Prize Share"@en ;
+    rdfs:comment "The allocation of the Nobel Prize award money among the recipients of a particular Nobel Prize category."@en ;
+    rdfs:domain myOnto:Person ;
+    rdfs:range xsd:integer .
+
+schema:GenderType a owl:Class .
+
+schema:Organization a owl:Class .
+
+schema:Person a owl:Class .
+
+schema:birthDate a owl:DatatypeProperty .
+
+schema:gender a owl:DatatypeProperty .
+
+schema:name a owl:DatatypeProperty .
+
+dbo:Country a owl:Class .
+
+:Nobel_Peace_Prize a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Peace Prize"^^xsd:string ;
+    owl:differentFrom :Nobel_Memorial_Prize_in_Economic_Sciences,
+        :Nobel_Prize_in_Chemistry,
+        :Nobel_Prize_in_Literature,
+        :Nobel_Prize_in_Physiology_or_Medicine ;
+    owl:sameAs dbr:Nobel_Peace_Prize .
+
+:Nobel_Prize_in_Literature a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Prize in Literature"^^xsd:string ;
+    owl:differentFrom :Nobel_Memorial_Prize_in_Economic_Sciences,
+        :Nobel_Prize_in_Chemistry,
+        :Nobel_Prize_in_Physiology_or_Medicine ;
+    owl:sameAs dbr:Nobel_Prize_in_Literature .
+
+:Nobel_Prize_in_Physics a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Prize in Physics"^^xsd:string ;
+    owl:differentFrom :Nobel_Memorial_Prize_in_Economic_Sciences,
+        :Nobel_Peace_Prize,
+        :Nobel_Prize_in_Chemistry,
+        :Nobel_Prize_in_Literature,
+        :Nobel_Prize_in_Physiology_or_Medicine ;
+    owl:sameAs dbr:Nobel_Prize_in_Physics .
+
+:Nobel_Prize_in_Physiology_or_Medicine a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Prize in Physiology or Medicine"^^xsd:string ;
+    owl:differentFrom :Nobel_Memorial_Prize_in_Economic_Sciences,
+        :Nobel_Prize_in_Chemistry ;
+    owl:sameAs dbr:Nobel_Prize_in_Physiology_or_Medicine .
+
+:Nobel_Memorial_Prize_in_Economic_Sciences a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Memorial Prize in Economic Sciences"^^xsd:string ;
+    owl:differentFrom :Nobel_Prize_in_Chemistry ;
+    owl:sameAs dbr:Nobel_Memorial_Prize_in_Economic_Sciences .
+
+:Nobel_Prize_in_Chemistry a myOnto:NobelPrize ;
+    myOnto:hasPrizeName "Nobel Prize in Chemistry"^^xsd:string ;
+    owl:sameAs dbr:Nobel_Prize_in_Chemistry .
+
+myOnto:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "A class defining a Person."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass dbo:Country ;
+            owl:onProperty myOnto:birthCountry ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty myOnto:organizationName ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty myOnto:hasPrizeName ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "3"^^xsd:nonNegativeInteger ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty myOnto:prizeShare ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty myOnto:birthDate ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty myOnto:laureateID ],
+        schema:Person .
+
