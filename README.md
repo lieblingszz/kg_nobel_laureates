@@ -112,4 +112,5 @@ The `Ontology_Nobel.graphml` file provides a visual representation of the ontolo
 
 ## License
 
-This project is created for educational purposes as part of a Semantic Web course. The Nobel Prize data is publicly available in Kaggle.
+This project is created for educational purposes as part of a Semantic Web course. The Nobel Prize data is publicly available in Kaggle (
+All Nobel Laureates 1901-present. Kaggle. Retrieved June 1, 2023, from. https://www.kaggle.com/datasets/prithusharma1/all-nobel-laureates-1901-present.).
