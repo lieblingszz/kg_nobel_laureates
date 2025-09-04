@@ -110,10 +110,6 @@ The CSV file contains information about Nobel laureates including:
 
 The `Ontology_Nobel.graphml` file provides a visual representation of the ontology structure, which can be opened in graph visualization tools like yEd or Gephi.
 
-## Documentation
-
-For detailed information about the project methodology, ontology design decisions, and evaluation results, please refer to the `Final_Project_Report.pdf`.
-
 ## License
 
 This project is created for educational purposes as part of a Semantic Web course. The Nobel Prize data is publicly available in Kaggle.
