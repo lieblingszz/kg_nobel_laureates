@@ -108,7 +108,12 @@ The CSV file contains information about Nobel laureates including:
 
 ## Visualization
 
-The `Ontology_Nobel.graphml` file provides a visual representation of the ontology structure, which can be opened in graph visualization tools like yEd or Gephi.
+The project includes several visualization resources:
+
+- **`Ontology_Nobel.graphml`**: Visual representation of the ontology structure, which can be opened in graph visualization tools like yEd or Gephi
+- **`image.pdf`**: Example visualization showing the knowledge graph structure and relationships between Nobel laureates, their categories, and associated entities
+
+![Knowledge Graph Visualization](image.pdf)
 
 ## License
 
